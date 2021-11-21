@@ -1,0 +1,25 @@
+package pages;
+
+import Base.BasePage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
+
+public class Results extends BasePage {
+
+    @FindBy(css = ".yuRUbf")
+    private List<WebElement> Links;
+
+    public Results(WebDriver driver) {
+        super(driver);
+    }
+
+    public boolean isResultExistInLinksList(String text){
+      return   Links.stream().anyMatch(f->f.getText().toLowerCase().contains(text));
+    }
+
+    public String getResult(int index){return Links.get(index).getText();}
+
+}

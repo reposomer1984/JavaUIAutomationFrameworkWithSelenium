@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name = "Parallel Testing Suite" parallel="classes" thread-count="4">
-      <test name = "Parallel Tests"  thread-count="5">
+<suite name = "Parallel Testing Suite" >
+      <test name = "Parallel Tests" parallel="methods">
         <classes >
             <class name = "tests.searchTests1" />
             <class name = "tests.searchTests2" />

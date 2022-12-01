@@ -8,16 +8,19 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 import utils.ConfigLoader;
 
+import java.awt.*;
+
 
 public class BaseTest {
 
     protected WebDriver webDriver;
+    private BrowserFactory browserFactory=BrowserFactory.getInstance();
+
 
     @BeforeSuite(alwaysRun = true)
-    private void setUpDriver(){
-         String browser=System.getProperty("browser","ch");
-        BrowserFactory browserFactory=BrowserFactory.getInstance();
-         if (browser.equalsIgnoreCase("ff")){
+    public void SetUpDriver(){
+        String browser=System.getProperty("browser","ch");
+        if (browser.equalsIgnoreCase("ff")){
              browserFactory.setDriver("ff");
              webDriver=browserFactory.getDriver();
          }
@@ -25,22 +28,23 @@ public class BaseTest {
              browserFactory.setDriver("ch");
              webDriver=browserFactory.getDriver();
          }
-    }
+        }
+
+        public void  OpenSite(){
+            String url= ConfigLoader.getInstance().getPropertyValue("url");
+            webDriver.get(url);
+        }
 
 
-    private void GoToSite(){
-        String url= ConfigLoader.getInstance().getPropertyValue("url");
-        webDriver.get(url);
-    }
 
     @BeforeTest
     public void OpenBrowser() throws Exception{
-        GoToSite();
+        OpenSite();
     }
 
     @AfterTest
     public void closeBrowser() {
-        webDriver.close();
+        webDriver.quit();
     }
 
 

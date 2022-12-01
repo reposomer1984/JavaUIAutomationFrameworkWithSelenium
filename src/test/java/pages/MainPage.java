@@ -19,11 +19,6 @@ public class MainPage extends BasePage {
         super(driver);
     }
 
-    public void openGoogleSite(){
-        String url=ConfigLoader.getInstance().getPropertyValue("url");
-        webDriver.get(url);
-        webDriver.manage().window().maximize();
-    }
 
     public Suggestions enterSearchTerm(String term) throws InterruptedException {
         for (char ch:term.toCharArray()) {

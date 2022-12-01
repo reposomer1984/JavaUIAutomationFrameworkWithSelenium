@@ -15,7 +15,6 @@ public class searchTests1 extends BaseTest {
     @Test
     public void searchIt1() throws InterruptedException {
         mainPage=new MainPage(webDriver);
-        mainPage.openGoogleSite();
         suggestions=mainPage.enterSearchTerm("microsoft");
         results=suggestions.chooseSearchTermFromList(0);
         System.out.println(results.getResult(0));

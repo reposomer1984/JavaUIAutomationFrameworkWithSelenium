@@ -39,7 +39,7 @@ public class BaseTest {
 
 
     @Parameters("browser")
-    @BeforeMethod(alwaysRun = true)
+    @BeforeMethod
     public void OpenBrowser(String browser) throws Exception{
         SetUpDriver(browser);
         OpenSite();

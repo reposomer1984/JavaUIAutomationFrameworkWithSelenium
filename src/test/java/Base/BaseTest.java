@@ -17,10 +17,9 @@ public class BaseTest {
     private BrowserFactory browserFactory=BrowserFactory.getInstance();
 
 
-    @Parameters("browser")
-    @BeforeSuite(alwaysRun = true)
-    public void SetUpDriver(){
-        String browser=System.getProperty("browser","ch");
+
+    public void SetUpDriver(String browser){
+        System.out.println("browser: "+browser);
         if (browser.equalsIgnoreCase("ff")){
              browserFactory.setDriver("ff");
              webDriver=browserFactory.getDriver();
@@ -39,9 +38,10 @@ public class BaseTest {
 
 
 
-    @BeforeMethod
-    public void OpenBrowser() throws Exception{
-
+    @Parameters("browser")
+    @BeforeMethod(alwaysRun = true)
+    public void OpenBrowser(String browser) throws Exception{
+        SetUpDriver(browser);
         OpenSite();
     }
 

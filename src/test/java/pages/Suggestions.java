@@ -9,11 +9,13 @@ import java.util.List;
 
 public class Suggestions extends BasePage {
 
+    private  WebDriver driver;
     @FindBy(className = "sbct")
     private List<WebElement> searchSuggestions;
 
     public Suggestions(WebDriver driver) {
         super(driver);
+        this.driver=driver;
         waitForVisibility(searchSuggestions.get(0));
     }
 
@@ -21,6 +23,6 @@ public class Suggestions extends BasePage {
     public Results chooseSearchTermFromList(int index)
     {
         searchSuggestions.get(index).click();
-        return new Results(webDriver);
+        return new Results(driver);
     }
 }

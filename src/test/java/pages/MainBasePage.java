@@ -5,17 +5,15 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.ConfigLoader;
 
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class MainPage extends BasePage {
+public class MainBasePage extends BasePage {
 
     @FindBy(name = "q")
     private WebElement searchTextBox;
 
-    public MainPage(WebDriver driver) {
+    public MainBasePage(WebDriver driver) {
         super(driver);
     }
 

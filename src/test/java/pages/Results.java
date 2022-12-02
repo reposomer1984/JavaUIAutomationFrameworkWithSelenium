@@ -9,11 +9,15 @@ import java.util.List;
 
 public class Results extends BasePage {
 
+    private  WebDriver driver;
+
     @FindBy(css = ".yuRUbf")
     private List<WebElement> Links;
 
-    public Results(WebDriver driver) {
+    public Results(WebDriver driver)
+    {
         super(driver);
+        this.driver=driver;
     }
 
     public boolean isResultExistInLinksList(String text){

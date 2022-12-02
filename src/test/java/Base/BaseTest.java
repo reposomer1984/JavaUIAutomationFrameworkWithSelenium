@@ -17,6 +17,7 @@ public class BaseTest {
     private BrowserFactory browserFactory=BrowserFactory.getInstance();
 
 
+    @Parameters("browser")
     @BeforeSuite(alwaysRun = true)
     public void SetUpDriver(){
         String browser=System.getProperty("browser","ch");
@@ -33,18 +34,20 @@ public class BaseTest {
         public void  OpenSite(){
             String url= ConfigLoader.getInstance().getPropertyValue("url");
             webDriver.get(url);
+            webDriver.manage().window().maximize();
         }
 
 
 
-    @BeforeTest
+    @BeforeMethod
     public void OpenBrowser() throws Exception{
+
         OpenSite();
     }
 
-    @AfterTest
+    @AfterMethod
     public void closeBrowser() {
-        webDriver.quit();
+        webDriver.close();
     }
 
 

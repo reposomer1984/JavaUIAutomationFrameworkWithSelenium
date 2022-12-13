@@ -17,9 +17,9 @@ public class BaseTest {
     private BrowserFactory browserFactory=BrowserFactory.getInstance();
 
 
-
-    public void SetUpDriver(String browser){
-        System.out.println("browser: "+browser);
+    @BeforeClass
+    public void SetUpDriver(){
+        String browser=System.getProperty("browser");
         if (browser.equalsIgnoreCase("ff")){
              browserFactory.setDriver("ff");
              webDriver=browserFactory.getDriver();
@@ -36,12 +36,8 @@ public class BaseTest {
             webDriver.manage().window().maximize();
         }
 
-
-
-    @Parameters("browser")
     @BeforeMethod
-    public void OpenBrowser(String browser) throws Exception{
-        SetUpDriver(browser);
+    public void OpenBrowser(){
         OpenSite();
     }
 

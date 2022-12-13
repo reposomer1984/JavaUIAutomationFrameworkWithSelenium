@@ -10,6 +10,7 @@ public class ConfigLoader {
 
     private ConfigLoader(){
         String env=System.getProperty("env","test");
+
                 try {
                     properties= utils.PropertyUtils.PropertyLoader("src/main/resources/"+env+".properties");
                 } catch (FileNotFoundException e) {

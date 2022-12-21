@@ -27,6 +27,7 @@ public class BrowserFactory {
                 ChromeOptions ChOptions=new ChromeOptions();
                 if (!os.toLowerCase().contains("windows")){
                     ChOptions.addArguments("--headless");
+                    ChOptions.addArguments("--disable-gpu");
                 }
                 WebDriverManager.chromedriver().setup();
                 webDriver=new ChromeDriver(ChOptions);
@@ -35,6 +36,7 @@ public class BrowserFactory {
                 FirefoxOptions FfOptions=new FirefoxOptions();
                 if (!os.toLowerCase().contains("windows")){
                     FfOptions.addArguments("--headless");
+                    FfOptions.addArguments("--disable-gpu");
                 }
                 WebDriverManager.firefoxdriver().setup();
                 webDriver=new FirefoxDriver(FfOptions);

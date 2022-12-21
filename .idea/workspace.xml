@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fb1a19e-b215-4ee1-ab20-40f2c655b370" name="Default Changelist" comment="change to parallel classes">
+    <list default="true" id="0fb1a19e-b215-4ee1-ab20-40f2c655b370" name="Default Changelist" comment="dummy error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Base/BrowserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Base/BrowserFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -226,7 +225,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671614939555</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add headless by os">
+      <created>1671616279861</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1671616279861</updated>
+    </task>
+    <task id="LOCAL-00014" summary="dummy error">
+      <created>1671616427745</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1671616427745</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,7 +258,9 @@
     <MESSAGE value="change to jdk 19" />
     <MESSAGE value="change to jdk 18" />
     <MESSAGE value="change to parallel classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="change to parallel classes" />
+    <MESSAGE value="add headless by os" />
+    <MESSAGE value="dummy error" />
+    <option name="LAST_COMMIT_MESSAGE" value="dummy error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

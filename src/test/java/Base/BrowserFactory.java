@@ -17,7 +17,7 @@ public class BrowserFactory {
             instance = new BrowserFactory();
         }
         return instance;
-    }add headless by os
+    }
 
     public final void setDriver(String browser){
         String os = System.getProperty("os.name");

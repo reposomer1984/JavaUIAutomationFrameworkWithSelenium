@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fb1a19e-b215-4ee1-ab20-40f2c655b370" name="Default Changelist" comment="change to jdk 18">
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+    <list default="true" id="0fb1a19e-b215-4ee1-ab20-40f2c655b370" name="Default Changelist" comment="change to parallel classes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Base/BrowserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Base/BrowserFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671614429886</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="change to parallel classes">
+      <created>1671614939555</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1671614939555</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,14 +244,15 @@
     <MESSAGE value="changes" />
     <MESSAGE value="change to jdk 19" />
     <MESSAGE value="change to jdk 18" />
-    <option name="LAST_COMMIT_MESSAGE" value="change to jdk 18" />
+    <MESSAGE value="change to parallel classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="change to parallel classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Base/BaseTest.java</url>
-          <line>22</line>
+          <line>23</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

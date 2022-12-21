@@ -3,7 +3,9 @@ package Base;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserFactory {
     WebDriver webDriver;
@@ -15,20 +17,30 @@ public class BrowserFactory {
             instance = new BrowserFactory();
         }
         return instance;
-    }
+    }add headless by os
 
     public final void setDriver(String browser){
+        String os = System.getProperty("os.name");
         switch (browser)
         {
             case "ch":
+                ChromeOptions ChOptions=new ChromeOptions();
+                if (!os.toLowerCase().contains("windows")){
+                    ChOptions.addArguments("--headless");
+                }
                 WebDriverManager.chromedriver().setup();
-                webDriver=new ChromeDriver();
+                webDriver=new ChromeDriver(ChOptions);
                 break;
             case "ff":
+                FirefoxOptions FfOptions=new FirefoxOptions();
+                if (!os.toLowerCase().contains("windows")){
+                    FfOptions.addArguments("--headless");
+                }
                 WebDriverManager.firefoxdriver().setup();
-                webDriver=new FirefoxDriver();
+                webDriver=new FirefoxDriver(FfOptions);
                 break;
         }
+
 
     }
 

@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name = "Parallel Testing Suite" >
-      <test name = "Parallel Tests" parallel="classes" thread-count="5">
+      docker omages<test name = "Parallel Tests" parallel="classes" thread-count="5">
         <classes>
             <class name = "tests.searchTests1" />
             <class name = "tests.searchTests2" />

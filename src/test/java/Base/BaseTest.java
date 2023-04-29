@@ -10,6 +10,7 @@ import org.testng.annotations.*;
 import utils.ConfigLoader;
 
 import java.awt.*;
+import java.net.MalformedURLException;
 
 
 public class BaseTest {
@@ -19,7 +20,7 @@ public class BaseTest {
 
 
     @BeforeClass
-    public void SetUpDriver(){
+    public void SetUpDriver() throws MalformedURLException {
         String browser=System.getProperty("browser");
         if (browser.equalsIgnoreCase("ff")){
              browserFactory.setDriver("ff");
@@ -44,7 +45,7 @@ public class BaseTest {
 
     @AfterMethod
     public void closeBrowser() {
-        webDriver.close();
+        webDriver.quit();
     }
 
 

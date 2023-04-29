@@ -6,11 +6,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class BrowserFactory {
     WebDriver webDriver;
-    private static BrowserFactory instance=null;
-    private BrowserFactory(){}
+    private static BrowserFactory instance = null;
+
+    private BrowserFactory() {
+    }
 
     public static BrowserFactory getInstance() {
         if (instance == null) {
@@ -19,32 +26,36 @@ public class BrowserFactory {
         return instance;
     }
 
-    public final void setDriver(String browser){
-        String os = System.getProperty("os.name");
-        switch (browser)
-        {
+    public final void setDriver(String browser) throws MalformedURLException {
+        String host = System.getProperty("HUB_HOST");
+        if (host == null) {
+            host = "localhost";
+        }
+        String url = "http://" + host + ":4444/wd/hub";
+        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+        switch (browser) {
             case "ch":
-                ChromeOptions ChOptions=new ChromeOptions();
-                if (!os.toLowerCase().contains("windows")){
-                    ChOptions.addArguments("--headless");
-                    ChOptions.addArguments("--disable-gpu");
+                desiredCapabilities = DesiredCapabilities.chrome();
+                try {
+                    webDriver = new RemoteWebDriver(new URL(url), desiredCapabilities);
+                } catch (MalformedURLException e) {
+                    throw new MalformedURLException(e.getLocalizedMessage());
                 }
-                WebDriverManager.chromedriver().setup();
-                webDriver=new ChromeDriver(ChOptions);
                 break;
             case "ff":
-                FirefoxOptions FfOptions=new FirefoxOptions();
-                if (!os.toLowerCase().contains("windows")){
-                    FfOptions.addArguments("--headless");
-                    FfOptions.addArguments("--disable-gpu");
+                desiredCapabilities = DesiredCapabilities.firefox();
+                try {
+                    webDriver = new RemoteWebDriver(new URL(url), desiredCapabilities);
+                } catch (MalformedURLException e) {
+                    throw new MalformedURLException(e.getLocalizedMessage());
                 }
-                WebDriverManager.firefoxdriver().setup();
-                webDriver=new FirefoxDriver(FfOptions);
                 break;
         }
 
 
     }
 
-    public WebDriver getDriver(){return webDriver;}
+    public WebDriver getDriver() {
+        return webDriver;
+    }
 }

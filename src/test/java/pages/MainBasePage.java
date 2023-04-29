@@ -15,6 +15,7 @@ public class MainBasePage extends BasePage {
 
     public MainBasePage(WebDriver driver) {
         super(driver);
+        this.waitForVisibility(searchTextBox);
     }
 
 

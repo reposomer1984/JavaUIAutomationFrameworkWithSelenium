@@ -27,7 +27,7 @@ public class BrowserFactory {
     }
 
     public final void setDriver(String browser) throws MalformedURLException {
-        String host = System.getProperty("HUB_HOST");
+        String host =String.valueOf(System.getProperty("hub_host"));
         if (host == null) {
             host = "localhost";
         }

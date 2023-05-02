@@ -18,7 +18,7 @@ public class BasePage {
       }
 
     public void waitForVisibility(WebElement element){
-        wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.elementToBeSelected(element));
     }
 
     public void waitForInVisibility(WebElement element){

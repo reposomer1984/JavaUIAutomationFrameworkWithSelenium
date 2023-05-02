@@ -16,7 +16,7 @@ public class Suggestions extends BasePage {
     public Suggestions(WebDriver driver) {
         super(driver);
         this.driver=driver;
-        waitForVisibility(searchSuggestions.get(0));
+        waitForVisibility(searchSuggestions.get(2));
     }
 
 

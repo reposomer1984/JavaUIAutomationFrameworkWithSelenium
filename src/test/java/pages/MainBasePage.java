@@ -13,9 +13,12 @@ public class MainBasePage extends BasePage {
     @FindBy(name = "q")
     private WebElement searchTextBox;
 
+    @FindBy(className = "o3j99")
+    private WebElement Footer;
+
     public MainBasePage(WebDriver driver) {
         super(driver);
-        this.waitForVisibility(searchTextBox);
+        this.waitForVisibility(Footer);
     }
 
 

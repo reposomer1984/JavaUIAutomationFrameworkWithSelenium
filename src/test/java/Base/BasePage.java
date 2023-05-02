@@ -18,8 +18,8 @@ public class BasePage {
       }
 
     public void waitForVisibility(WebElement element){
-        wait.until(ExpectedConditions.elementToBeSelected(element));
-    }
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+   }
 
     public void waitForInVisibility(WebElement element){
         wait.until(ExpectedConditions.invisibilityOf(element));

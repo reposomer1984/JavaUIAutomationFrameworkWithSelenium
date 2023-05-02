@@ -27,11 +27,11 @@ public class BrowserFactory {
     }
 
     public final void setDriver(String browser) throws MalformedURLException {
-        String host =String.valueOf(System.getProperty("hub_host"));
+        String host =System.getProperty("hub_host");
         if (host == null) {
             host = "localhost";
         }
-        String url = "http://" + host + ":4444/wd/hub";
+try        String url = "http://" + host + ":4444/wd/hub";
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         switch (browser) {
             case "ch":

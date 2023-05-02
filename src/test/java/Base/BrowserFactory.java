@@ -31,7 +31,7 @@ public class BrowserFactory {
         if (host == null) {
             host = "localhost";
         }
-try        String url = "http://" + host + ":4444/wd/hub";
+        String url = "http://" + host + ":4444/wd/hub";
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         switch (browser) {
             case "ch":

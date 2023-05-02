@@ -18,7 +18,7 @@ public class Results extends BasePage {
     {
         super(driver);
         this.driver=driver;
-        this.waitForVisibility(Links.get(3));
+        this.waitForVisibility(Links.get(0));
     }
 
     public boolean isResultExistInLinksList(String text){

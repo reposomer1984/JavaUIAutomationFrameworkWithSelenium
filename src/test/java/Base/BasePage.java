@@ -1,5 +1,6 @@
 package Base;
 
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -20,6 +21,7 @@ public class BasePage {
     public void waitForVisibility(WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element));
    }
+
 
     public void waitForInVisibility(WebElement element){
         wait.until(ExpectedConditions.invisibilityOf(element));

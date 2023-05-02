@@ -1,11 +1,12 @@
 package tests;
 
 import Base.BaseTest;
-import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.MainBasePage;
 import pages.Results;
 import pages.Suggestions;
+
 
 public class searchTests1 extends BaseTest {
 

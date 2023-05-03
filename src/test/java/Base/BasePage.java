@@ -19,7 +19,7 @@ public class BasePage {
       }
 
     public void waitForVisibility(WebElement element){
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+        wait.until(ExpectedConditions.visibilityOf(element));
    }
 
 

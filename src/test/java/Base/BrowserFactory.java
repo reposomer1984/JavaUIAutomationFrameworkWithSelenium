@@ -13,7 +13,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BrowserFactory {
-    WebDriver webDriver;
+    private ThreadLocal<WebDriver> webDriver = new ThreadLocal<WebDriver>();
+
     private static BrowserFactory instance = null;
 
     private BrowserFactory() {
@@ -37,7 +38,7 @@ public class BrowserFactory {
             case "ch":
                 desiredCapabilities = DesiredCapabilities.chrome();
                 try {
-                    webDriver = new RemoteWebDriver(new URL(url), desiredCapabilities);
+                    webDriver.set(new RemoteWebDriver(new URL(url), desiredCapabilities));
                 } catch (MalformedURLException e) {
                     throw new MalformedURLException(e.getLocalizedMessage());
                 }
@@ -45,7 +46,7 @@ public class BrowserFactory {
             case "ff":
                 desiredCapabilities = DesiredCapabilities.firefox();
                 try {
-                    webDriver = new RemoteWebDriver(new URL(url), desiredCapabilities);
+                    webDriver.set( new RemoteWebDriver(new URL(url), desiredCapabilities));
                 } catch (MalformedURLException e) {
                     throw new MalformedURLException(e.getLocalizedMessage());
                 }
@@ -56,6 +57,6 @@ public class BrowserFactory {
     }
 
     public WebDriver getDriver() {
-        return webDriver;
+        return webDriver.get();
     }
 }
